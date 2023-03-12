@@ -2,9 +2,10 @@
 var generateBtn = document.querySelector("#generate");
 
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numbers = "1234567890";
-const symbols = ".,/;'[]-=~!@#$%^&*()_+:{}|";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "1234567890";
+var symbols = ".,/;'[]-=~!@#$%^&*()_+:{}|";
+var finalPassword = [];
 
 function generatePassword() {
   // ask the user for the password length
@@ -17,6 +18,30 @@ function generatePassword() {
   if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
     alert("Please choose a number between 8 and 128 chars");
   }
+
+  var isLowerCase = confirm("Do you want lowercase letters?");
+  var isUpperCase = confirm("Do you want uppercase letters?");
+  var isNumbers = confirm("Do you want numbers?");
+  var isSymbols = confirm("Do you want symbols?");
+
+  if (isLowerCase) {
+    finalPassword.push(...lowerCase);
+  }
+  if (isUpperCase) {
+    finalPassword.push(...upperCase);
+  }
+  if (isNumbers) {
+    finalPassword.push(...numbers);
+  }
+  if (isSymbols) {
+    finalPassword.push(...symbols);
+  }
+
+  if (!isLowerCase && !isUpperCase && !isNumbers && !isSymbols) {
+    alert("please use at least one type of characters");
+  }
+
+  // create the for loop to choose a random character as many times as the password length
 }
 
 // Write password to the #password input
@@ -31,8 +56,4 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // password generator
-// password needs to be between 8 and 128 chars
-// it CAN contain lowercase, uppercase, symbols and no
-// we need to allow the user to choose what character they want
-// if they don't choose any type of chars they will get an alert
 // if everything goes to plan, we generate the random password
