@@ -49,13 +49,12 @@ for (var i = 0; i < lowerCase; i++) {
 for (var i = 0; i < upperCase; i++) {
   console.log(upperCase);
 }
-for (var i = 0; i < numbers; i++) {
-  console.log(numbers);
+for (var i = 1; i < numbers; i++) {
+  console.log(numbers + ".");
 }
 for (var i = 0; i < symbols; i++) {
   console.log(symbols);
 }
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
