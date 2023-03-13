@@ -42,10 +42,7 @@ function generatePassword() {
   }
 }
 // create the for loop to choose a random character as many times as the password length
-for (var i = 0; i <= passwordLength; i++) {
-  var isNumbers = Math.floor(Math.random() * chars.length);
-  password += chars.substring(randomNumber, randomNumber + 1);
-}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
