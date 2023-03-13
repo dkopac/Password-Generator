@@ -43,6 +43,19 @@ function generatePassword() {
 }
 // create the for loop to choose a random character as many times as the password length
 
+for (var i = 0; i < lowerCase; i++) {
+  console.log(lowerCase);
+}
+for (var i = 0; i < upperCase; i++) {
+  console.log(upperCase);
+}
+for (var i = 0; i < numbers; i++) {
+  console.log(numbers);
+}
+for (var i = 0; i < symbols; i++) {
+  console.log(symbols);
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
