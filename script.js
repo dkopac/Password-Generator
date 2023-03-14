@@ -51,8 +51,6 @@ function generatePassword() {
   return s;
 }
 
-// create the for loop to choose a random character as many times as the password length
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -65,4 +63,3 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // password generator
-// if everything goes to plan, we generate the random password
