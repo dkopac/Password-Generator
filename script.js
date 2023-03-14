@@ -2,7 +2,9 @@
 var generateBtn = document.querySelector("#generate");
 
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var arrlowerCase = lowerCase.split("");
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var arrupperCase = upperCase.split("");
 var numbers = "1234567890";
 var symbols = ".,/;'[]-=~!@#$%^&*()_+:{}|";
 var finalPassword = [];
@@ -40,21 +42,17 @@ function generatePassword() {
   if (!isLowerCase && !isUpperCase && !isNumbers && !isSymbols) {
     alert("please use at least one type of characters");
   }
+  var s = "";
+  for (var i = 0; i < passwordLength; i++) {
+    var rand = Math.floor(Math.random() * finalPassword.length);
+    s = s + finalPassword[rand];
+  }
+  console.log(s);
+  return s;
 }
+
 // create the for loop to choose a random character as many times as the password length
 
-for (var i = 0; i < lowerCase; i++) {
-  console.log(lowerCase);
-}
-for (var i = 0; i < upperCase; i++) {
-  console.log(upperCase);
-}
-for (var i = 1; i < numbers; i++) {
-  console.log(numbers + ".");
-}
-for (var i = 0; i < symbols; i++) {
-  console.log(symbols);
-}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
